@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://maeyler.github.io/JS/canvas/Pie%20Chart.html -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" sizes="192x192" href="https://maeyler.github.io/JS/images/JS.png">
+    <title>Yuvarlak diyagram </title>
+
+  <style>
+    body { max-width: 440px; }
+    #sample { overflow-x: auto; }
+  </style>
+</head>
+
+<body>
+
+<h2 id="title">Yuvarlak Diyagram</h2>
+<p>Javascript Kullanma</p>
+
+<p id="out">46% &nbsp; <span style="color:lightblue"> Satisfied </span><br>25% &nbsp; <span style="color:lightgreen"> Neutral </span><br>22% &nbsp; <span style="color:pink"> Unsatisfied </span><br>8% &nbsp; <span style="color:silver"> No comment </span><br></p>
+<hr>
+<canvas id="canvas" width="260" height="260"></canvas>
+<hr>
+<b>Ornek Kod</b>
+<pre id="sample">function pieChart(data, R = 110, C = 20) {<br>    canvas.width = 2*(R+C); canvas.height = 2*(R+C);<br>    const cx = canvas.getContext("2d");<br>    const k = 2 * Math.PI / 100;<br>    let a = -0.5 * Math.PI; // start at -pi/2<br>    for (let x of data) {<br>        const delta = x.percent * k;<br>        cx.beginPath();<br>        // center=(R+C, R+C) radius=R<br>        // clockwise by delta<br>        cx.arc(R+C, R+C, R, a, a + delta);<br>        a += delta;<br>        cx.lineTo(R+C, R+C);<br>        cx.fillStyle = x.color;<br>        cx.fill();<br>    }<br>}</pre>
+
+<p>Ref: <i>Eloquent JavaScript</i>,
+<a href="http://eloquentjavascript.net/17_canvas.html" target="NewTab"> Chap 17</a>
+</p>
+
+<script>
+"use strict";
+const results = [
+  {name: "Memnun", count: 1043, color: "lightblue"},
+  {name: "Notr", count: 563, color: "lightgreen"},
+  {name: "Memnuniyetsiz", count: 510, color: "pink"},
+  {name: "Yorumsuz", count: 175, color: "silver"}
+];
+function namesToHTML(data) {
+    let total = 0;
+    for (let x of data) total += x.count;
+    //data.reduce((sum, {count}) => sum + count, 0);
+    let s = "";
+    for (let x of data) {
+        x.percent = x.count * 100 / total;
+        s += x.percent.toFixed()+"% &nbsp; <span style='color:"
+            +x.color+"'> "+x.name+" </span><br>";
+    }
+    return s;
+}
+function pieChart(data, R = 110, C = 20) {
+    canvas.width = 2*(R+C); canvas.height = 2*(R+C);
+    const cx = canvas.getContext("2d");
+    const k = 2 * Math.PI / 100;
+    let a = -0.5 * Math.PI; // start at -pi/2
+    for (let x of data) {
+        const delta = x.percent * k;
+        cx.beginPath();
+        // center=(R+C, R+C) radius=R
+        // clockwise by delta
+        cx.arc(R+C, R+C, R, a, a + delta);
+        a += delta;
+        cx.lineTo(R+C, R+C);
+        cx.fillStyle = x.color;
+        cx.fill();
+    }
+}
+    title.innerText = document.title;
+    sample.innerText = pieChart.toString();
+    out.innerHTML = namesToHTML(results);
+    pieChart(results);
+</script>
+
+
+
+</body></html>
