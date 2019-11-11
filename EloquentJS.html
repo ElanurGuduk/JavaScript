@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://maeyler.github.io/JS/sss/inspector.css" rel="stylesheet" media="all">
+    <script src="https://maeyler.github.io/JS/sss/inspector.js"></script>
+    <script src="c4_data.js"></script>
+    <script src="c6_object.js"></script>
+    <script src="Quiz.js"></script>
+    <script src="Async.js"></script>
+    <script src="Database.js"></script>
+    <title>Eloquent JavaScript </title>
+</head>
+
+<body>
+<p><b id=docName></b> &nbsp;
+<a href="https://maeyler.github.io/JS/sss/">Read me</a> &nbsp;
+<a href="https://maeyler.github.io/JS/sss/Turkish">Turkish</a>
+</p>
+<div id=sss></div>
+<p><input type=file multiple onChange='fileSelect(this)' /> 
+</p>
+<pre id=disp1></pre>
+<img id=disp2 /><br>
+<a href="https://elanurguduk.github.io/JavaScript/Pie%20Chart.html"> CW1</a> <br>
+<a href="https://elanurguduk.github.io/JavaScript/Counting.html"> CW2</a> <br>
+<a href="https://elanurguduk.github.io/JavaScript/ConvertFrom.html"> CW2.1</a> <br> 
+<a href="https://elanurguduk.github.io/JavaScript/CW4.html"> CW4</a> <br> 
+
+
+
+<script>
+"use strict";
+class Point {
+	consurctor(x,y) { 
+		this.x = x;
+		this.y = y;
+	}
+	toString(){
+		return "("+ this.x + ","+ this.y +")";
+	}
+}
+
+class Point3D extends Point { 
+	constructor(x,y,z) { 
+		super(x, y);
+		this.z;
+	}
+	toString() { 
+		return "("+ this.x + ","+ this.y + ", " + this.z + ")";
+	}
+}
+class CW5  extends Menu {
+	constructor() {
+		super()
+		let ders = new Course("BLM305", "13:00", "31.10.2019", ["B121"]);
+		this.student = new Student("1521221054", "Elanur GUDUK", 0, ders);
+		this.course = ders;
+		this.point = new Point(1, 2);
+		this.point3d = new Point3D(1,2,3);
+	}
+}
+
+var a, b, c, code;  //global variables
+function init() {
+    let len = 123, name = "Circle", pi = Math.PI;
+    a = [0, 11, "22", "abc"];
+    c = {len, name, pi};
+    display(new Chap4());
+    display(new Chap6());
+    display(new Quiz());
+    display(new Async); //global
+    display(new CW5);
+}
+    docName.innerText = "Inspector "+VERSION;
+    try {
+        inspect(sss, init); //makes the table
+        inp.value = "new Date()";
+    } catch(e) {
+        reportError(e);
+    }
+</script>
+</body>
+</html>
