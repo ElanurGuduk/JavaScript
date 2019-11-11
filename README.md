@@ -3,7 +3,7 @@ use for BLM305
 
 ClassWork
 
-[CW1](https://elanurguduk.github.io/JavaScript/Pie%20Chart.html)
+[CW1 Pie Chart](https://elanurguduk.github.io/JavaScript/Pie%20Chart.html)
 
 [CW2.1](https://elanurguduk.github.io/JavaScript/ConvertFrom.html)
 
