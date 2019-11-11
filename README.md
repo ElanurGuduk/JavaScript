@@ -1,6 +1,4 @@
 # JavaScript
-use for BLM305
-
 ClassWork
 
 [CW1 Pie Chart](https://elanurguduk.github.io/JavaScript/Pie%20Chart.html)
