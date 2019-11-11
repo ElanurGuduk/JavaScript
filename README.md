@@ -15,4 +15,5 @@ ClassWork
 
 Homework
 
+[HW1](https://elanurguduk.github.io/JavaScript/PoissonTable.html)
 
