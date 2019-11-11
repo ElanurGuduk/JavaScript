@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://maeyler.github.io/JS/hard/Table%20maker.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" sizes="192x192" href="https://maeyler.github.io/JS/images/JS.png">
+    <title>Poisson Table </title>
+
+  <style>
+    body { max-width: 440px; }
+    #sample { overflow-x: auto; }
+    table { border-collapse: collapse; }
+    th { color: blue; padding: 5px 5px; }
+    td { 
+        border: 1px solid blue; 
+        padding: 5px 5px; 
+        text-align: center; 
+        position: relative;
+    }
+    td:hover .tip {
+        visibility: visible;
+    }
+    td .tip {
+        visibility: hidden;
+        font-size: small;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        position: absolute;
+        left: 5px; 
+        top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+<center>
+<h2 id="title">Poisson Table</h2>
+
+<table id="tablo"><tbody><tr><th></th><th>λ=1</th><th>λ=2</th><th>λ=3</th><th>λ=4</th><th>λ=5</th><th>λ=6</th></tr><tr><th>x=1</th><td>0<span class="tip">C1</span></td><td>0<span class="tip">C2</span></td><td>0<span class="tip">C3</span></td><td>0<span class="tip">C4</span></td><td>0<span class="tip">C5</span></td><td>0<span class="tip">C6</span></td></tr><tr><th>x=2</th><td>0<span class="tip">C7</span></td><td>0<span class="tip">C8</span></td><td>0<span class="tip">C9</span></td><td>0<span class="tip">C10</span></td><td>0<span class="tip">C11</span></td><td>0<span class="tip">C12</span></td></tr><tr><th>x=3</th><td>0<span class="tip">C13</span></td><td>0<span class="tip">C14</span></td><td>0<span class="tip">C15</span></td><td>0<span class="tip">C16</span></td><td>0<span class="tip">C17</span></td><td>0<span class="tip">C18</span></td></tr><tr><th>x=4</th><td>0<span class="tip">C19</span></td><td>0<span class="tip">C20</span></td><td>0<span class="tip">C21</span></td><td>0<span class="tip">C22</span></td><td>0<span class="tip">C23</span></td><td>0<span class="tip">C24</span></td></tr><tr><th>x=5</th><td>0<span class="tip">C25</span></td><td>0<span class="tip">C26</span></td><td>0<span class="tip">C27</span></td><td>0<span class="tip">C28</span></td><td>0<span class="tip">C29</span></td><td>0<span class="tip">C30</span></td></tr><tr><th>x=6</th><td>0<span class="tip">C31</span></td><td>0<span class="tip">C32</span></td><td>0<span class="tip">C33</span></td><td>0<span class="tip">C34</span></td><td>0<span class="tip">C35</span></td><td>0<span class="tip">C36</span></td></tr><tr><th>x=7</th><td>0<span class="tip">C37</span></td><td>0<span class="tip">C38</span></td><td>0<span class="tip">C39</span></td><td>0<span class="tip">C40</span></td><td>0<span class="tip">C41</span></td><td>0<span class="tip">C42</span></td></tr><tr><th>x=8</th><td>0<span class="tip">C43</span></td><td>0<span class="tip">C44</span></td><td>0<span class="tip">C45</span></td><td>0<span class="tip">C46</span></td><td>0<span class="tip">C47</span></td><td>0<span class="tip">C48</span></td></tr><tr><th>x=9</th><td>0<span class="tip">C49</span></td><td>0<span class="tip">C50</span></td><td>0<span class="tip">C51</span></td><td>0<span class="tip">C52</span></td><td>0<span class="tip">C53</span></td><td>0<span class="tip">C54</span></td></tr></tbody></table>
+</center>
+
+<script>
+"use strict";
+//June 8, 2018 MAE -- basis for 
+//https://maeyler.github.io/Visual-Mujam/
+//
+function faktoriel(num){
+  let p=1;
+  while(num>0){
+  	p*=num;
+    num--;
+  }
+return p;
+};
+
+function makeRows(m, n) {
+	const L=[0.5, 1, 1.5, 2, 2.5, 3];
+	let avg=0;
+    let row = "<th></th>";
+    for (let j = 1; j <= n; j++) 
+        row += "<th>"+"λ = "+L[j-1]+"</th>";
+    let text = "<tr>"+row+"</tr>";
+    for (let i = 1; i <= m; i++) {
+       row = "<th>"+"x = "+(i-1)+"</th>";
+       for (let j = 1; j <= n; j++) {
+          let p = n*(i-1)+j;
+          let s = "<span class=tip>C"+p+"</span>"
+          avg=avg=(Math.exp(-L[j-1])*(Math.pow(L[j-1],i-1)/faktoriel(i-1))).toFixed(4); 
+          row += "<td>"+avg+"</td>";
+       }
+       text += "<tr>"+row+"</tr>";
+    }
+    tablo.innerHTML = text; 
+
+}
+    title.innerText = document.title;
+    makeRows(9,6);
+</script>
+
+
+ 
+</body></html>
