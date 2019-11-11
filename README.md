@@ -8,3 +8,5 @@ use for BLM305
 [CW2_2](https://elanurguduk.github.io/JavaScript/Counting.html)
 
 [CW4](https://elanurguduk.github.io/JavaScript/CW4.html)
+
+[CW5](https://elanurguduk.github.io/JavaScript/EloquentJS.html)
