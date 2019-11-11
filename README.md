@@ -5,9 +5,9 @@ ClassWork
 
 [CW1](https://elanurguduk.github.io/JavaScript/Pie%20Chart.html)
 
-[CW2_1](https://elanurguduk.github.io/JavaScript/ConvertFrom.html)
+[CW2.1](https://elanurguduk.github.io/JavaScript/ConvertFrom.html)
 
-[CW2_2](https://elanurguduk.github.io/JavaScript/Counting.html)
+[CW2.2](https://elanurguduk.github.io/JavaScript/Counting.html)
 
 [CW4](https://elanurguduk.github.io/JavaScript/CW4.html)
 
