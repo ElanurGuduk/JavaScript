@@ -7,4 +7,4 @@ use for BLM305
 
 [CW2_2](https://elanurguduk.github.io/JavaScript/Counting.html)
 
-[CW24](https://elanurguduk.github.io/JavaScript/CW4.html)
+[CW_4](https://elanurguduk.github.io/JavaScript/CW4.html)
