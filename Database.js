@@ -1,23 +1,52 @@
-class Course{
-    constructor(code,time,date,course){
-        this.code=code;
-        this.time=time;
-        this.date=date;
-        this.course=course;
+"use strict";
+class Course {
+  constructor(name, time, date) {
+    this.name = name
+    this.time = time
+    this.date = date
+    this.rooms = []
+  }
+  addRooms(...room) {
+    for (let r of room) this.rooms.push(r)
+    return this
+  }
+  toString() {
+    return this.name;
+  }
+}
+
+class Student {
+  constructor(id, name, gpa) {
+    this.id = id
+    this.name = name
+    this.gpa = gpa
+    this.courses = []
+  }
+  addCourses(...course) {
+    for (let c of course) this.courses.push(c)
+    return this
+  }
+  toString() {
+    return this.name +": "+this.gpa;
+  }
+}
+
+
+class Database {
+    constructor() {
+        this.students = new Map()
+        this.courses = new Map()
     }
-    toString(){
-        return "Course's id is "+this.code;
+    addStudent(id,stu){
+        this.students.set(id,stu)
+    }
+    addCourse(name,crs){
+        this.courses.set(name,crs)
+    }
+    toString() {
+        return this.name+" by "+this.author.name
     }
 }
 
-class Student{
-    constructor(id,name,gpa,course){
-        this.id=id
-        this.name=name
-        this.gpa=gpa
-        this.course=course
-    }
-    toString(){
-        return "Student's id is "+this.id;
-    }
-}
+
+
