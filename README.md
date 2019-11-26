@@ -11,6 +11,7 @@ ClassWork
 
 [CW5 Inspector](https://elanurguduk.github.io/JavaScript/EloquentJS.html)
 
+[CW7 Timing](https://elanurguduk.github.io/JavaScript/CW7/Timing.html)
 Homework
 
 [HW1 Poisson Table](https://elanurguduk.github.io/JavaScript/PoissonTable.html)
