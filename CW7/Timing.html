@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../images/icon192.png">
+    <script src="Database.js"></script>
+    <title>Database</title>
+</head>
+
+<body>
+<h2>Time Measurement</h2>
+<button onClick='timing()'>Search</button>
+<p id="out"></p>
+
+
+<hr />
+<h3>Sample code</h3>
+<pre id=sample></pre>
+<hr />
+
+<script>
+"use strict";
+function count() {
+    const d = new Date();
+    let sec = twoDigits(d.getSeconds());
+    if (sec == "00") setHourMin();
+    clock.innerText = hm+":"+sec;
+    time = setTimeout(count, 1000);
+}
+// Make a large Set
+const url = "https://maeyler.github.io/JS/data/"
+const array = []     // Student objects
+const map=new Map()  // Student ids
+const set = new Set() // distinct names
+function readData(file) {
+    console.log("readData "+file)
+    fetch(url+file)
+        .then(r => r.text())
+        .then(addStudents)
+        .catch(console.error)
+}
+function parseStudent(line) {
+    let [id, name, gpa, ...L] = line.split('\t')
+    let std = new Student(id, name, gpa)
+    std.courses = L; return std
+}
+function addStudents(txt) {
+    let msg = "<br>Data contains "
+         + txt.length+" chars, "
+    let a = txt.split('\n')
+    msg += a.length+" lines <br>"
+    for (let s of a) {
+      let std = parseStudent(s)
+      array.push(std.id); 
+      map.set(std.id,std)
+      set.add(std.name);
+
+    }
+    msg += array.length+" students, "
+    msg += set.size+" distinct names"
+    //out.innerHTML += msg
+}
+function timing() {
+	let countArray=0
+	let countMap=0
+	let ids=[]
+	//Array search
+	let t = performance.now() //more accurate than Date.now()
+	for(let i=0; i<10000; i++){
+		let stdId=215170000 + Math.floor((Math.random() * 999))
+		ids.push(stdId+"")	
+		if(array.includes(stdId+"")){
+			countArray++
+		}		
+	}
+	t = performance.now() - t
+
+	//Map search
+	let tt=performance.now()
+	for(let j=0; j<10000; j++){
+		if(map.has(ids[j])){
+			countMap++
+		}
+	}
+	tt = performance.now() - tt
+
+	let s="Count array: "+countArray+" Timing :"+t+" msec"+"<br>"+"Count map: "+countMap+" Timing :"+tt+" msec"
+	out.innerHTML += "<br>"+s; console.log(s)
+
+}
+    //title.innerText = document.title;
+    readData("Students.txt")
+</script>
+
+</body>
+</html>
