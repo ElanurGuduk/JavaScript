@@ -17,3 +17,5 @@ Homework
 
 [HW1 Poisson Table](https://elanurguduk.github.io/JavaScript/PoissonTable.html)
 
+[HW2 Student Database](https://elanurguduk.github.io/JavaScript/HW2/Database.html)
+
