@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="Database.js"></script>
+    <title>Student Database</title>
+</head>
+<body>
+    <h2 id="title">Student Database</h2>
+
+    <script>
+        let data=new Database()
+        
+    </script>
+    
+    <button onclick="demo.innerText=data.randomStd()">Random</button>
+    <button onclick="demo.innerText=data.bestGpa()">Best Gpa</button>
+    <ul>        
+    </ul>
+
+    <p>Gpa :
+    <input id='inpAbove'> <button onclick="demo.innerText=data.aboveGpa(inpAbove.value)">AboveGpa</button> 
+    </p>
+
+    <ul>        
+    </ul>
+
+    <p>Student id :
+    <input id='stId'> <button onclick="demo.innerText=data.stCourses(stId.value)">Std courses</button> 
+    <button onclick="demo.innerText=data.findExamSchedule(stId.value)">Exam schedule</button> 
+    </p>
+
+    <ul>
+    </ul>
+
+    <p>Course code :
+    <input id='code'> <button onclick="demo.innerText=data.studentsIn(code.value)">Std List</button> </p>
+
+    <ul>
+    </ul>
+    <p>Exam room :
+    <input id='examRoom'> <button onclick="demo.innerText=data.courseList(examRoom.value)">All courses</button>
+    </p>
+    <ul>
+    </ul>
+    <p>Room :
+    <input id='totalCourse'> <button onclick="demo.innerText=data.numberOfCourses(totalCourse.value)">Total Course</button>
+    </p>    
+    <ul>        
+    </ul>
+<style>
+    button
+    {
+        width: 120px; 
+    }
+
+</style>
+<script>
+function enableAndDisable(b,i)
+{
+    if(i.value=="")
+        {
+             document.getElementById(b).disabled   = true;
+        }
+        else
+        {
+            document.getElementById(b).disabled   = false;
+            
+        }
+
+    
+}
+
+</script>
+
+<p id="demo" style="color:black;" ></p>
+</body>
+</html>
