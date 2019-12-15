@@ -13,6 +13,10 @@ ClassWork
 
 [CW7 Timing](https://elanurguduk.github.io/JavaScript/CW7/Timing.html)
 
+[CW8 DOM and PWA](https://elanurguduk.github.io/JavaScript/Make%20a%20Table.html)
+
+[CW9 Github Users](https://elanurguduk.github.io/JavaScript/GitHub%20Users.html)
+
 Homework
 
 [HW1 Poisson Table](https://elanurguduk.github.io/JavaScript/PoissonTable.html)
