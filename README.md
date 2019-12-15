@@ -1,5 +1,5 @@
 # JavaScript
-ClassWork
+ClassWorks
 
 [CW1 Pie Chart](https://elanurguduk.github.io/JavaScript/Pie%20Chart.html)
 
@@ -17,7 +17,7 @@ ClassWork
 
 [CW9 Github Users](https://elanurguduk.github.io/JavaScript/GitHub%20Users.html)
 
-Homework
+Homeworks
 
 [HW1 Poisson Table](https://elanurguduk.github.io/JavaScript/PoissonTable.html)
 
