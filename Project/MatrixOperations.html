@@ -11,29 +11,30 @@
 		font-size:30px; 
 		margin-left: 500px;
 		color: #424949;
+		top: 50px;
 	}
 	#m1-div{
 		width: 150px;
 		height: 150px;
-		background-color:powderblue; 
+		background-color: powderblue; 
 		position: absolute;
-		top: 150px;
+		top: 120px;
 		left:400px;
 	}
 	#m2-div{
 		width: 150px;
 		height: 150px;
-		background-color:powderblue; 
+		background-color: powderblue; 
 		position: absolute;
-		top: 150px;
+		top: 120px;
 		left:600px;
 	}
 	#m3-div{
 		width: 150px;
 		height: 150px;
-		background-color:powderblue; 
+		background-color: powderblue; 
 		position: absolute;
-		top: 150px;
+		top: 120px;
 		left:800px;
 	}
 
@@ -45,19 +46,19 @@
 		<table class="m1-table"><br> <b>Matrix 1</b>
 
 			<tr>
-				<td><input class="00" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="01" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="02" type="text" style="width:33px; height: 27px"></td>
+				<td><input id=m1_00 type=number value=3 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_01 type=number value=6 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_02 type=number value=9 style="width:37px; height: 33px;"></td>
 			</tr>
 			<tr>
-				<td><input class="10" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="11" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="12" type="text" style="width:33px; height: 27px"></td>
+				<td><input id=m1_10 type=number value=1 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_11 type=number value=0 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_12 type=number value=2 style="width:37px; height: 33px;"></td>
 			</tr>
 			<tr>
-				<td><input class="20" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="21" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="22" type="text" style="width:33px; height: 27px"></td>
+				<td><input id=m1_20 type=number value=4 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_21 type=number value=1 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_22 type=number value=0 style="width:37px; height: 33px;"></td>
 			</tr>
 		</table>
 	</div>
@@ -65,19 +66,19 @@
 		<table class="m2-table"><br> <b>Matrix 2</b>
 
 			<tr>
-				<td><input class="00" type="text" style="width:33px; height: 27px;"></td>
-				<td><input class="01" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="02" type="text" style="width:33px; height: 27px"></td>
+				<td><input id=m2_00 type=number value=2 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_01 type=number value=7 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_02 type=number value=5 style="width:37px; height: 33px;"></td>
 			</tr>
 			<tr>
-				<td><input class="10" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="11" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="12" type="text" style="width:33px; height: 27px"></td>
+				<td><input id=m2_10 type=number value=3 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_11 type=number value=2 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_12 type=number value=7 style="width:37px; height: 33px;"></td>
 			</tr>
 			<tr>
-				<td><input class="20" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="21" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="22" type="text" style="width:33px; height: 27px"></td>
+				<td><input id=m2_20 type=number value=0 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_21 type=number value=8 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_22 type=number value=9 style="width:37px; height: 33px;"></td>
 			</tr>
 		</table>
 	</div>
@@ -86,24 +87,94 @@
 		<table class="m3-table"><br> <b>Result</b>
 
 			<tr>
-				<td><input class="00" type="text" style="width:33px; height: 27px;"></td>
-				<td><input class="01" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="02" type="text" style="width:33px; height: 27px"></td>
+				<td><input id=m3_00 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_01 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_02 type=number style="width:37px; height: 33px;"></td>
 			</tr>
 			<tr>
-				<td><input class="10" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="11" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="12" type="text" style="width:33px; height: 27px"></td>
+				<td><input id=m3_10 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_11 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_12 type=number style="width:37px; height: 33px;"></td>
 			</tr>
 			<tr>
-				<td><input class="20" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="21" type="text" style="width:33px; height: 27px"></td>
-				<td><input class="22" type="text" style="width:33px; height: 27px"></td>
+				<td><input id=m3_20 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_21 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_22 type=number style="width:37px; height: 33px;"></td>
 			</tr>
 		</table>
 	</div>
+	<button onclick="addMatrix()">Adding</button>
+	<button onclick="multiply()">Multiply</button>
+	<button onclick="transpoze()">Transpoze</button>
 <script>
-	
+	function addMatrix(){
+		let cell1, cell2, cell3;
+		let x,y;
+		for(let i=0; i<3; i++){
+  			cell1="m1_"
+  			cell2="m2_"
+  			cell3="m3_"
+  			for(let j=0; j<3; j++){
+    			cell1+=(i).toString()+(j).toString()
+    			cell2+=(i).toString()+(j).toString()
+    			cell3+=(i).toString()+(j).toString()
+    			//get elements in Matrix
+    			x=Number(document.getElementById(cell1).value)
+    			y=Number(document.getElementById(cell2).value)
+    			//set elements in Matrix
+    			document.getElementById(cell3).value =x+y;
+    			cell1="m1_"
+    			cell2="m2_"
+    			cell3="m3_"
+  			}  
+		}		
+	}
+	function multiply(){
+		let x=3, t=3;
+		let cell1, cell2, cell3;
+		let a,b;
+		let c=0;
+		for(let i=0; i<x; i++){
+			for(let j=0; j<t; j++){
+      			for(let k=0; k<t; k++){
+      				cell1='m1_'
+        			cell2='m2_'
+        			cell1+=(i).toString()+(k).toString()
+        			cell2+=(k).toString()+(j).toString()
+        			a=Number(document.getElementById(cell1).value)
+        			b=Number(document.getElementById(cell2).value)
+        			c=c+a*b        			
+      			}
+      			cell3='m3_'
+      			cell3+=(i).toString()+(j).toString()
+				document.getElementById(cell3).value =c;      			
+      			c=0
+    		}
+		}
+		
+	}
+	function transpoze(){
+		let cell3='m3_'
+		let tempCell='m3_'
+		let temp;
+		for(let i=0; i<3; i++){			
+			for(let j=0; j<3; j++){
+				temp=0
+      			cell3+=(i).toString()+(j).toString()
+      			temp=Number(document.getElementById(cell3).value)
+      			console.log(temp)
+      			cell3='m3_'
+      			cell3+=(i).toString()+(j).toString()
+      			tempCell+=(j).toString()+(i).toString()
+      			document.getElementById(cell3).value =Number(document.getElementById(tempCell).value)
+      			cell3='m3_'
+      			cell3+=(j).toString()+(i).toString()
+      			document.getElementById(cell3).value=temp
+    		}
+		}
+
+	}
+
 </script>
 </body>
 </html>
