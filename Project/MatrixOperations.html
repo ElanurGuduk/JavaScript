@@ -43,7 +43,7 @@
 <body>
 	<h1>Matrix Operations</h1>	
 	<div id="m1-div">
-		<table class="m1-table"><br> <b> Matrix 1</b>
+		<table class="m1-table"><br> <b> 3x3 Matrix </b>
 			<tr>
 				<td><input id=m1_00 type=number value=3 style="width:37px; height: 33px;"></td>
 				<td><input id=m1_01 type=number value=6 style="width:37px; height: 33px;"></td>
@@ -62,7 +62,7 @@
 		</table>
 	</div>
 		<div id="m2-div">
-		<table class="m2-table"><br> <b>Matrix 2</b>
+		<table class="m2-table"><br> <b> 3x3 Matrix</b>
 
 			<tr>
 				<td><input id=m2_00 type=number value=2 style="width:37px; height: 33px;"></td>
@@ -83,7 +83,7 @@
 	</div>
 		</div>
 		<div id="m3-div">
-		<table class="m3-table"><br> <b>Result</b>
+		<table class="m3-table"><br> <b> 3x3 Matrix</b>
 
 			<tr>
 				<td><input id=m3_00 type=number style="width:37px; height: 33px;"></td>
@@ -105,7 +105,9 @@
 	<button onclick="addMatrix()">Adding</button>
 	<button onclick="multiply()">Multiply</button>
 	<button onclick="transpoze()">Transpoze</button>
-	<button onclick="findDeterminant()">determinant</button>
+	<button onclick="findDeterminant()">Determinant</button>
+	<button onclick="inverse()">Inverse</button>
+
 
 <script>
 	function addMatrix(){
@@ -228,8 +230,57 @@
 		console.log(det)
 		
 	}
+	function inverse(){
+		let a=new Array(3)
+		let b=new Array(3)
+		let cell;
+		for (let i = 0; i < 3; i++) {
+			a[i]=new Array(3)
+			b[i]=new Array(3)
+			for(let j = 0; j < 3; j++){
+				cell='m3_'
+				cell+=(i).toString()+(j).toString()
+				a[i][j]=Number(document.getElementById(cell).value)
+			}
+			cell='m3_'
+		}
+		console.log(a)
+
+		for(let i=0; i<3; i++){
+			for(let j=0; j<3; j++){
+      			if(i==j){
+        			b[i][j]=1
+      			}        
+      			else{
+        			b[i][j]=0
+      			}            
+    		}
+		}
+		let d,k;
+		for(let i=0; i<3; i++){
+  			d=a[i][i]
+  			for(let j=0; j<3; j++){
+    			a[i][j]=a[i][j]/d
+    			b[i][j]=b[i][j]/d
+  
+  			}
+  			for(let x=0; x<3; x++){
+    			if(x!=i){
+      				k=a[x][i]
+      				for(let j=0; j<3; j++){
+        				a[x][j]=a[x][j]-(a[i][j]*k)
+        				b[x][j]=b[x][j]-(b[i][j]*k)
+      				}
+    			}
+  			}
+		}
+		for(let i=0; i<3; i++){
+  			for(let j=0; j<3; j++){
+    			console.log(b[i][j])    
+    		}
+		}
+	}
 
 </script>
 </body>
 </html>
-
