@@ -43,8 +43,7 @@
 <body>
 	<h1>Matrix Operations</h1>	
 	<div id="m1-div">
-		<table class="m1-table"><br> <b>Matrix 1</b>
-
+		<table class="m1-table"><br> <b> Matrix 1</b>
 			<tr>
 				<td><input id=m1_00 type=number value=3 style="width:37px; height: 33px;"></td>
 				<td><input id=m1_01 type=number value=6 style="width:37px; height: 33px;"></td>
@@ -106,6 +105,8 @@
 	<button onclick="addMatrix()">Adding</button>
 	<button onclick="multiply()">Multiply</button>
 	<button onclick="transpoze()">Transpoze</button>
+	<button onclick="findDeterminant()">determinant</button>
+
 <script>
 	function addMatrix(){
 		let cell1, cell2, cell3;
@@ -154,25 +155,78 @@
 		
 	}
 	function transpoze(){
-		let cell3='m3_'
-		let tempCell='m3_'
-		let temp;
-		for(let i=0; i<3; i++){			
-			for(let j=0; j<3; j++){
-				temp=0
+		let cell3, val, tempCell;
+		for(let i=0; i<3; i++){
+			for(let j=0; j<i; j++){
+				//1. işlem
+      			cell3='m3_';
       			cell3+=(i).toString()+(j).toString()
-      			temp=Number(document.getElementById(cell3).value)
-      			console.log(temp)
-      			cell3='m3_'
-      			cell3+=(i).toString()+(j).toString()
-      			tempCell+=(j).toString()+(i).toString()
-      			document.getElementById(cell3).value =Number(document.getElementById(tempCell).value)
-      			cell3='m3_'
+      			val=Number(document.getElementById(cell3).value)
+      			
+      
+      			//a[i][j]=a[j][i]		
+      			tempCell='m3_';
+      			tempCell+=(i).toString()+(j).toString()
+      			cell3='m3_';
       			cell3+=(j).toString()+(i).toString()
-      			document.getElementById(cell3).value=temp
+      			document.getElementById(tempCell).value=Number(document.getElementById(cell3).value)    
+      			
+      			//a[j][i]=val
+      			cell3='m3_';
+      			cell3+=(j).toString()+(i).toString()
+      			document.getElementById(cell3).value=val;
+      			console.log(cell3)
     		}
 		}
 
+	}
+	function determinant(matris){
+		let temp;
+		let result=0
+		if(matris.length==1){
+  			result=matris[0][0]
+  			return result;
+		}
+		if(matris.length==2){
+  			result=matris[0][0]*matris[1][1]-matris[0][1]*matris[1][0]
+  			return result;
+		}
+		for(let i=0; i<matris[0].length; i++){
+  			temp=new Array(matris.length-1)
+  			temp[0]=new Array(2)
+  			temp[1]=new Array(2)
+  			for(let j=1; j<matris.length; j++){
+    			for(let k=0; k<matris[0].length; k++){
+      				if(k<i){
+        				temp[j-1][k]=matris[j][k]
+      				}
+      				if(k>i){
+        				temp[j-1][k-1]=matris[j][k]
+      				}
+    
+    			}  
+  			}
+  		result+=matris[0][i]*Math.pow(-1,Number(i))*determinant(temp)
+		}
+		return result;
+	}
+	function findDeterminant(){
+		let m=new Array()
+		let values=[]
+		let cell;
+
+		for (let i = 0; i < 3; i++) {
+			cell='m3_'
+			m[i]=new Array(3)
+			for(let j = 0; j < 3; j++){
+				cell+=(i).toString()+(j).toString()
+				m[i][j]=Number(document.getElementById(cell).value)
+				cell='m3_'
+			}
+		}
+		let det=determinant(m)
+		console.log(det)
+		
 	}
 
 </script>
