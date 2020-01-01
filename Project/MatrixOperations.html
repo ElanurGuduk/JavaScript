@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
 	<title>Matrix page</title>
 	<style>
 
@@ -9,9 +11,22 @@
 	}
 	h1{
 		font-size:30px; 
-		margin-left: 500px;
+		margin-left: 500px;		
+		margin-top: 40px;
 		color: #424949;
-		top: 50px;
+	}
+	h2{
+
+		font-size: 15px;
+		margin-left: 500px;
+		margin-top: 400px;
+		color: #424949; 
+	}
+	button{
+		border: none;
+		padding: 10px;
+		border-radius: 4px;
+		height: 30px;
 	}
 	#m1-div{
 		width: 150px;
@@ -19,7 +34,7 @@
 		background-color: powderblue; 
 		position: absolute;
 		top: 120px;
-		left:400px;
+		left:250px;
 	}
 	#m2-div{
 		width: 150px;
@@ -27,7 +42,7 @@
 		background-color: powderblue; 
 		position: absolute;
 		top: 120px;
-		left:600px;
+		left:425px;
 	}
 	#m3-div{
 		width: 150px;
@@ -35,6 +50,14 @@
 		background-color: powderblue; 
 		position: absolute;
 		top: 120px;
+		left:600px;
+	}
+	#button-div{
+		width: 150px;
+		height: 150px;
+		background-color: powderblue; 
+		position: absolute;
+		top: 150px;
 		left:800px;
 	}
 
@@ -43,7 +66,8 @@
 <body>
 	<h1>Matrix Operations</h1>	
 	<div id="m1-div">
-		<table class="m1-table"><br> <b> 3x3 Matrix </b>
+		<table class="m1-table"><br> <b>  Matrix 1 </b>
+
 			<tr>
 				<td><input id=m1_00 type=number value=3 style="width:37px; height: 33px;"></td>
 				<td><input id=m1_01 type=number value=6 style="width:37px; height: 33px;"></td>
@@ -61,14 +85,15 @@
 			</tr>
 		</table>
 	</div>
-		<div id="m2-div">
-		<table class="m2-table"><br> <b> 3x3 Matrix</b>
+	<div id="m2-div">
+		<table class="m2-table"><br> <b> Matrix 2</b>
 
 			<tr>
 				<td><input id=m2_00 type=number value=2 style="width:37px; height: 33px;"></td>
 				<td><input id=m2_01 type=number value=7 style="width:37px; height: 33px;"></td>
-				<td><input id=m2_02 type=number value=5 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_02 type=number value=5 style="width:37px; height: 33px;"></td> 
 			</tr>
+
 			<tr>
 				<td><input id=m2_10 type=number value=3 style="width:37px; height: 33px;"></td>
 				<td><input id=m2_11 type=number value=2 style="width:37px; height: 33px;"></td>
@@ -80,10 +105,14 @@
 				<td><input id=m2_22 type=number value=9 style="width:37px; height: 33px;"></td>
 			</tr>
 		</table>
+		<button onclick="addMatrix()">Adding</button>
+		<br>
+		<br>
+		<button onclick="multiply()">Multiply</button>
 	</div>
-		</div>
-		<div id="m3-div">
-		<table class="m3-table"><br> <b> 3x3 Matrix</b>
+		
+	<div id="m3-div">
+		<table class="m3-table"><br> <b> Result </b>
 
 			<tr>
 				<td><input id=m3_00 type=number style="width:37px; height: 33px;"></td>
@@ -100,14 +129,44 @@
 				<td><input id=m3_21 type=number style="width:37px; height: 33px;"></td>
 				<td><input id=m3_22 type=number style="width:37px; height: 33px;"></td>
 			</tr>
+		</table>	
+		<button onclick="transpoze()">Transpoze</button><br>
+		<br>
+		<button onclick="findDeterminant()">Determinant</button> : <br>
+		<br>
+		<input id=inp type=number style="width: 80px">
+	</div>
+
+	<div id="button-div">
+		<button onclick="inverse()"> > Inverse</button><br>
+		<table class="table">
+			<tr>
+				<td><input id=00 type=number style="width: 80px"></td>
+				<td><input id=01 type=number style="width: 80px"></td>
+				<td><input id=02 type=number style="width: 80px"></td>
+			</tr>
+			<tr>
+				<td><input id=10 type=number style="width: 80px"></td>
+				<td><input id=11 type=number style="width: 80px"></td>
+				<td><input id=12 type=number style="width: 80px"></td>
+			</tr>
+			<tr>
+				<td><input id=20 type=number style="width: 80px"></td>
+				<td><input id=21 type=number style="width: 80px"></td>
+				<td><input id=22 type=number style="width: 80px"></td>
+			</tr>
 		</table>
 	</div>
-	<button onclick="addMatrix()">Adding</button>
-	<button onclick="multiply()">Multiply</button>
-	<button onclick="transpoze()">Transpoze</button>
-	<button onclick="findDeterminant()">Determinant</button>
-	<button onclick="inverse()">Inverse</button>
-
+	<div id="link">
+		<h2>References :
+			<p>
+				<a href="https://www.w3schools.com/html/">w3schools</a>,
+				<a href="http://bilgisayarkavramlari.sadievrenseker.com/2008/11/19/matrisin-tersinin-alinmasi-mantrix-inverse/">bilgisayar kavramlari</a><br>
+			</p>	
+		</h2>
+		
+	</div>
+	
 
 <script>
 	function addMatrix(){
@@ -130,7 +189,7 @@
     			cell2="m2_"
     			cell3="m3_"
   			}  
-		}		
+		}	
 	}
 	function multiply(){
 		let x=3, t=3;
@@ -226,8 +285,10 @@
 				cell='m3_'
 			}
 		}
-		let det=determinant(m)
+		let det=determinant(m);
+		document.getElementById('inp').value=det
 		console.log(det)
+
 		
 	}
 	function inverse(){
@@ -274,9 +335,15 @@
     			}
   			}
 		}
+		let c;
 		for(let i=0; i<3; i++){
+			c=''
   			for(let j=0; j<3; j++){
-    			console.log(b[i][j])    
+  				c=''
+      			c+=(j).toString()+(i).toString()
+      			console.log(c)
+      			document.getElementById(c).value=b[i][j].toFixed(5);
+    			   
     		}
 		}
 	}
