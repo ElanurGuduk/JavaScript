@@ -11,15 +11,15 @@
 	}
 	h1{
 		font-size:30px; 
-		margin-left: 500px;		
+		margin-left: 300px;		
 		margin-top: 40px;
 		color: #424949;
 	}
 	h2{
 
 		font-size: 15px;
-		margin-left: 500px;
-		margin-top: 400px;
+		margin-left: 300px;
+		margin-top: 500px;
 		color: #424949; 
 	}
 	button{
@@ -57,8 +57,8 @@
 		height: 150px;
 		background-color: powderblue; 
 		position: absolute;
-		top: 150px;
-		left:650px;
+		top: 400px;
+		left:300px;
 	}
 
 	</style>
@@ -69,19 +69,19 @@
 		<table class="m1-table"><br> <b>  Matrix 1 </b>
 
 			<tr>
-				<td><input id=m1_00 type=number value=3 style="width:27px; height: 23px;"></td>
-				<td><input id=m1_01 type=number value=6 style="width:27px; height: 23px;"></td>
-				<td><input id=m1_02 type=number value=9 style="width:27px; height: 23px;"></td>
+				<td><input id=m1_00 type=number value=3 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_01 type=number value=6 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_02 type=number value=9 style="width:37px; height: 33px;"></td>
 			</tr>
 			<tr>
-				<td><input id=m1_10 type=number value=1 style="width:27px; height: 23px;"></td>
-				<td><input id=m1_11 type=number value=0 style="width:27px; height: 23px;"></td>
-				<td><input id=m1_12 type=number value=2 style="width:27px; height: 23px;"></td>
+				<td><input id=m1_10 type=number value=1 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_11 type=number value=0 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_12 type=number value=2 style="width:37px; height: 33px;"></td>
 			</tr>
 			<tr>
-				<td><input id=m1_20 type=number value=4 style="width:27px; height: 23px;"></td>
-				<td><input id=m1_21 type=number value=1 style="width:27px; height: 23px;"></td>
-				<td><input id=m1_22 type=number value=0 style="width:27px; height: 23px;"></td>
+				<td><input id=m1_20 type=number value=4 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_21 type=number value=1 style="width:37px; height: 33px;"></td>
+				<td><input id=m1_22 type=number value=0 style="width:37px; height: 33px;"></td>
 			</tr>
 		</table>
 	</div>
@@ -89,20 +89,20 @@
 		<table class="m2-table"><br> <b> Matrix 2</b>
 
 			<tr>
-				<td><input id=m2_00 type=number value=2 style="width:27px; height: 23px;"></td>
-				<td><input id=m2_01 type=number value=7 style="width:27px; height: 23px;"></td>
-				<td><input id=m2_02 type=number value=5 style="width:27px; height: 23px;"></td> 
+				<td><input id=m2_00 type=number value=2 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_01 type=number value=7 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_02 type=number value=5 style="width:37px; height: 33px;"></td> 
 			</tr>
 
 			<tr>
-				<td><input id=m2_10 type=number value=3 style="width:27px; height: 23px;"></td>
-				<td><input id=m2_11 type=number value=2 style="width:27px; height: 23px;"></td>
-				<td><input id=m2_12 type=number value=7 style="width:27px; height: 23px;"></td>
+				<td><input id=m2_10 type=number value=3 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_11 type=number value=2 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_12 type=number value=7 style="width:37px; height: 33px;"></td>
 			</tr>
 			<tr>
-				<td><input id=m2_20 type=number value=0 style="width:27px; height: 23px;"></td>
-				<td><input id=m2_21 type=number value=8 style="width:27px; height: 23px;"></td>
-				<td><input id=m2_22 type=number value=9 style="width:27px; height: 23px;"></td>
+				<td><input id=m2_20 type=number value=0 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_21 type=number value=8 style="width:37px; height: 33px;"></td>
+				<td><input id=m2_22 type=number value=9 style="width:37px; height: 33px;"></td>
 			</tr>
 		</table>
 		<button onclick="addMatrix()">Adding</button>
@@ -115,45 +115,45 @@
 		<table class="m3-table"><br> <b> Result </b>
 
 			<tr>
-				<td><input id=m3_00 type=number style="width:27px; height: 23px;"></td>
-				<td><input id=m3_01 type=number style="width:27px; height: 23px;"></td>
-				<td><input id=m3_02 type=number style="width:27px; height: 23px;"></td>
+				<td><input id=m3_00 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_01 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_02 type=number style="width:37px; height: 33px;"></td>
 			</tr>
 			<tr>
-				<td><input id=m3_10 type=number style="width:27px; height: 23px;"></td>
-				<td><input id=m3_11 type=number style="width:27px; height: 23px;"></td>
-				<td><input id=m3_12 type=number style="width:27px; height: 23px;"></td>
+				<td><input id=m3_10 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_11 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_12 type=number style="width:37px; height: 33px;"></td>
 			</tr>
 			<tr>
-				<td><input id=m3_20 type=number style="width:27px; height: 23px;"></td>
-				<td><input id=m3_21 type=number style="width:27px; height: 23px;"></td>
-				<td><input id=m3_22 type=number style="width:27px; height: 23px;"></td>
+				<td><input id=m3_20 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_21 type=number style="width:37px; height: 33px;"></td>
+				<td><input id=m3_22 type=number style="width:37px; height: 33px;"></td>
 			</tr>
 		</table>	
 		<button onclick="transpoze()">Transpoze</button><br>
 		<br>
 		<button onclick="findDeterminant()">Determinant</button> : <br>
-		<br>
-		<input id=inp type=number style="width: 60px">
+		<br> 
+		<input id=inp type=number style="width: 80px">
 	</div>
 
 	<div id="button-div">
 		<button onclick="inverse()"> > Inverse</button><br>
 		<table class="table">
 			<tr>
-				<td><input id=00 type=number style="width: 60px"></td>
-				<td><input id=01 type=number style="width: 60px"></td>
-				<td><input id=02 type=number style="width: 60px"></td>
+				<td><input id=00 type=number style="width: 80px"></td>
+				<td><input id=01 type=number style="width: 80px"></td>
+				<td><input id=02 type=number style="width: 80px"></td>
 			</tr>
 			<tr>
-				<td><input id=10 type=number style="width: 60px"></td>
-				<td><input id=11 type=number style="width: 60px"></td>
-				<td><input id=12 type=number style="width: 60px"></td>
+				<td><input id=10 type=number style="width: 80px"></td>
+				<td><input id=11 type=number style="width: 80px"></td>
+				<td><input id=12 type=number style="width: 80px"></td>
 			</tr>
 			<tr>
-				<td><input id=20 type=number style="width: 60px"></td>
-				<td><input id=21 type=number style="width: 60px"></td>
-				<td><input id=22 type=number style="width: 60px"></td>
+				<td><input id=20 type=number style="width: 80px"></td>
+				<td><input id=21 type=number style="width: 80px"></td>
+				<td><input id=22 type=number style="width: 80px"></td>
 			</tr>
 		</table>
 	</div>
