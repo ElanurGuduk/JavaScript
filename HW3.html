@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Box animation</title>
+	<style >
+	body{
+		background-color:#FEF9E7;
+		margin-left: 450px;
+		margin-top: 50px; 
+	}
+	h1{
+		font-size:30px; 
+		margin-left: 100px;		
+		margin-top: 60px;
+		color: #424949;
+	}
+	.boxes{
+		font-size: 15px;
+	}
+	.div-box {
+  		width: 80px;
+  		height: 80px;
+  		border-radius: 4px;
+  		display: inline-block;
+	}		
+	</style>
+</head>
+<body>
+	<h1>Animation</h1>
+	<div id='boxes'>
+			<div style="">
+			<div class=div-box style="background-color: #DAF7A6"></div>
+			<div class=div-box style="background-color: #FFC300"></div>
+			<div class=div-box style="background-color: #7DCEA0"></div>
+			<div class=div-box style="background-color: #F5B7B1"></div>				
+			</div>
+			<div>
+			<div class=div-box style="background-color: #85C1E9"></div>
+			<div class=div-box style="background-color: #EDBB99"></div>
+			<div class=div-box style="background-color: #AEB6BF"></div>
+			<div class=div-box style="background-color: #C39BD3"></div>				
+			</div>
+			<div>
+			<div class=div-box style="background-color: #58D68D"></div>
+			<div class=div-box style="background-color: #51D9D6"></div>
+			<div class=div-box style="background-color: #CDD951"></div>
+			<div class=div-box style="background-color: #DC7633"></div>				
+			</div>						
+			<div>
+			<div class=div-box style="background-color: #585853"></div>
+			<div class=div-box style="background-color: #C4A5D1"></div>
+			<div class=div-box style="background-color: #A2D9CE"></div>
+			<div class=div-box style="background-color: #F39C12"></div>				
+			</div>		
+	</div>
+
+	<script>
+		let eventHandler = function(event){
+      		let element = event.target;
+      		if (!element || !element.classList.contains('div-box'))
+          		return;
+          	var letters = '0123456789ABCDEF';
+  			var color = '#';
+  			for (var i = 0; i < 6; i++) {
+   		 		color += letters[Math.floor(Math.random() * 16)];
+  			}
+      		let target=color      
+      		let keyframes = [
+        		{ background: '#eee' },
+        		{ background: target }
+      		];
+      		let options = 150;
+      		let animation=element.animate(keyframes, options);
+    };
+    let boxes = document.getElementById('boxes');
+    boxes.addEventListener('mouseover', eventHandler);
+	</script>
+</body>
+</html>
