@@ -23,6 +23,8 @@ Homeworks
 
 [HW2 Student Database](https://elanurguduk.github.io/JavaScript/HW2/Database.html)
 
+[HW3 Animation](https://elanurguduk.github.io/JavaScript/HW3.html)
+
 Project
 
 [Matrix Operations](https://elanurguduk.github.io/JavaScript/Project/MatrixOperations.html)
